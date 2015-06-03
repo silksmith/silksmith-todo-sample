@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+
+<div class="container">
+
+    <div class="jumbotron">
+            <h1>
+                silksmith todo
+            </h1>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-6">
+            <ul id="todoList" class="list-group"></ul>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+
+        <form id="newTodoForm" method="post" class="col-md-offset-2 col-md-6">
+
+            <div class="form-group">
+                <label for="title">What?</label>
+                <input name="title" id="title" type="text" class="form-control"
+                       required
+                       placeholder="Buy Milk...">
+            </div>
+
+            <div class="form-group">
+
+                <button class="btn btn-primary" type="submit">
+                    <span class="glyphicon glyphicon-plus">Add</span>
+                </button>
+
+            </div>
+        </form>
+    </div>
+</div>
+<!-- for now -->
+<script src="todo-sample.js"></script>
+</body>
+</html>

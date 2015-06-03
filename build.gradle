@@ -1,0 +1,63 @@
+plugins {
+  id "io.silksmith.plugin" version "0.5.0"
+}
+repositories {
+
+    jcenter()
+    maven { url="http://dl.bintray.com/silksmith-io/silk"}
+}
+dependencies {
+    web "io.silksmith.libs:closure-base:1.0.2+smith.+"
+    web "io.silksmith.libs:bootstrap-sass:3.3.4+smith.+"
+    web "io.silksmith.libs:jquery:1.11.2+smith.+"
+
+
+    testWeb "io.silksmith.libs:sinon:1.15.0+smith.0"
+
+    testWeb "io.silksmith.libs:chai:2.3.0+smith.0"
+    testWeb "io.silksmith.libs:chai-jquery:2.0.0+smith.0"
+    testWeb "io.silksmith.libs:sinon-chai:2.7.0+smith.0"
+
+
+
+
+}
+
+closureCompileJS{
+    entryPoint="todo.init"
+
+    // prints compile version and exits
+    //args << "--version"
+
+    // changes compilation level (default is ADVANCED_OPTIMIZATIONS)
+    args += [
+            "--compilation_level",
+            "ADVANCED_OPTIMIZATIONS"
+    ]
+
+    // sets options on the CompilerOptions directly
+    options {
+        //useNewTypeInference = true
+        languageIn = "ECMASCRIPT5"
+    }
+}
+server {
+    dir file("src/www")
+}
+
+task putEverythingTogether(type:Copy){
+    into "$buildDir/dist"
+    from assembleCSS
+    from assembleJS
+
+    from assembleWebapp {
+     //since we use the concatenated version of the JS and CSS we exclude them
+        exclude "**/*.js"
+        exclude "**/*.css"
+    }
+    from "src/www/index.html"
+}
+
+
+task wrapper(type: Wrapper) { gradleVersion = '2.4' }
+
