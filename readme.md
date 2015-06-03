@@ -2,6 +2,7 @@
 
 
 ##Run
+Java 8 needs to be installed
 ###Dev Server [http://localhost:10101](http://localhost:10101)
 ```
 ./gradlew server
