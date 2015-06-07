@@ -15,6 +15,13 @@
 ./gradlew putEverythingTogether
 ```
 
+###Refactoring with RefasterJS
+Applies the RefasterJS templates found in the refasterjs folder. Leave the ```-PdryRun``` to apply the changes
+```
+./gradlew refasterAll -PdryRun
+```
+
+
 ##JS Overview
 - ```TodoItem.js``` Defines the data structure TodoItem objects
 - ```ItemView.js``` renders a todo object and listens for click events on the done/delete

@@ -1,13 +1,33 @@
+buildscript {
+
+	ext {
+		silksmithVersion = "0.6.0-SNAPSHOT"
+	}
+
+    repositories {
+
+
+        jcenter()
+        maven { url ='http://oss.jfrog.org/artifactory/libs-snapshot' }
+
+    }
+    dependencies {
+         classpath "io.silksmith:silksmith:$silksmithVersion"
+    }
+}
+apply plugin: "io.silksmith.plugin"
+/*
 plugins {
   id "io.silksmith.plugin" version "0.5.0"
 }
+*/
 repositories {
 
     jcenter()
     maven { url="http://dl.bintray.com/silksmith-io/silk"}
 }
 dependencies {
-    web "io.silksmith.libs:closure-base:1.0.2+smith.+"
+    web "io.silksmith.libs:closure-base:v20150604"
     web "io.silksmith.libs:bootstrap-sass:3.3.4+smith.+"
     web "io.silksmith.libs:jquery:1.11.2+smith.+"
 
