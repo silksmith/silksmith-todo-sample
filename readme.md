@@ -2,6 +2,7 @@
 
 
 ##Run
+Java 8 needs to be installed
 ###Dev Server [http://localhost:10101](http://localhost:10101)
 ```
 ./gradlew server
@@ -15,7 +16,8 @@
 ./gradlew putEverythingTogether
 ```
 
-##JS Overview
+##JS Overview (src/main/js)
+
 - ```TodoItem.js``` Defines the data structure TodoItem objects
 - ```ItemView.js``` renders a todo object and listens for click events on the done/delete
 - ```TodoItemController.js``` handles callbacks from the ItemView and updates the Todo Item
