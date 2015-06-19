@@ -26,15 +26,6 @@ dependencies {
 closureCompileJS{
     entryPoint="todo.init"
 
-    // prints compile version and exits
-    //args << "--version"
-
-    // changes compilation level (default is ADVANCED_OPTIMIZATIONS)
-    args += [
-            "--compilation_level",
-            "ADVANCED_OPTIMIZATIONS"
-    ]
-
     // sets options on the CompilerOptions directly
     options {
         //useNewTypeInference = true
