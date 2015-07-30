@@ -15,9 +15,10 @@ Java 8 needs to be installed
 ```
 ./gradlew putEverythingTogether
 ```
-
 ##JS Overview (src/main/js)
 
+
+##JS Overview
 - ```TodoItem.js``` Defines the data structure TodoItem objects
 - ```ItemView.js``` renders a todo object and listens for click events on the done/delete
 - ```TodoItemController.js``` handles callbacks from the ItemView and updates the Todo Item
@@ -25,7 +26,9 @@ Java 8 needs to be installed
 - ```NewTodoItemController.js``` handles callback from the NewTodoForm and creates new Todo items
 - ```init.js``` Glues the initial components together, the entry point of the application
 
-
-
-
+###Refactoring with RefasterJS
+Applies the RefasterJS templates found in the refasterjs folder. Leave the ```-PdryRun``` to apply the changes
+```
+./gradlew refasterAll -PdryRun
+```
 
