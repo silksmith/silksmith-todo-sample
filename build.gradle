@@ -1,29 +1,8 @@
-buildscript {
-
-	ext {
-		silksmithVersion = "0.6.0-SNAPSHOT"
-	}
-
-    repositories {
-
-
-        jcenter()
-        maven { url ='http://oss.jfrog.org/artifactory/libs-snapshot' }
-
-    }
-    dependencies {
-         classpath "io.silksmith:silksmith:$silksmithVersion"
-    }
-}
-apply plugin: "io.silksmith.plugin"
-/*
 plugins {
-  id "io.silksmith.plugin" version "0.5.0"
+  id "io.silksmith.plugin" version "0.6.2"
 }
-*/
-repositories {
 
-    jcenter()
+repositories {
     maven { url="http://dl.bintray.com/silksmith-io/silk"}
 }
 dependencies {
@@ -32,14 +11,12 @@ dependencies {
     web "io.silksmith.libs:jquery:1.11.2+smith.+"
 
 
+    testWeb "io.silksmith.libs:mocha:2.2.5+smith.+"
     testWeb "io.silksmith.libs:sinon:1.15.0+smith.0"
 
     testWeb "io.silksmith.libs:chai:2.3.0+smith.0"
     testWeb "io.silksmith.libs:chai-jquery:2.0.0+smith.0"
     testWeb "io.silksmith.libs:sinon-chai:2.7.0+smith.0"
-
-
-
 
 }
 
@@ -63,6 +40,7 @@ closureCompileJS{
 }
 server {
     dir file("src/www")
+	proxy "http://localhost:8080"
 }
 
 task putEverythingTogether(type:Copy){
@@ -79,5 +57,4 @@ task putEverythingTogether(type:Copy){
 }
 
 
-task wrapper(type: Wrapper) { gradleVersion = '2.4' }
-
+task wrapper(type: Wrapper) { gradleVersion = '2.5' }
