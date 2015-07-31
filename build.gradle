@@ -11,11 +11,11 @@ dependencies {
     web "io.silksmith.libs:jquery:1.11.2+smith.+"
 
 
-    testWeb "io.silksmith.libs:mocha:2.2.5+smith.+"
+    testWeb "io.silksmith.libs:mocha:2.2.5+smith.1"
     testWeb "io.silksmith.libs:sinon:1.15.4+smith.0"
 
     testWeb "io.silksmith.libs:chai:3.2.0+smith.0"
-    testWeb "io.silksmith.libs:chai-jquery:2.0.0+smith.+"
+    testWeb "io.silksmith.libs:chai-jquery:2.0.0+smith.3"
     testWeb "io.silksmith.libs:sinon-chai:2.7.0+smith.0"
 
 }
